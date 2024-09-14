@@ -1,6 +1,1 @@
-ubuntu@ip-172-31-10-51:~$ git clone https://github.com/Aneelima-1234/Terraform-projects.git
-Cloning into 'Terraform-projects'...
-Username for 'https://github.com': neelimaavala2002@gmail.com
-Password for 'https://neelimaavala2002@gmail.com@github.com':
-remote: Write access to repository not granted.
-fatal: unable to access 'https://github.com/Aneelima-1234/Terraform-projects.git/': The requested URL returned error: 403
+
