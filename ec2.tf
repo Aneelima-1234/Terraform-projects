@@ -13,25 +13,31 @@ provider "aws" {
 resource "aws_security_group" "neelimasg" {
     name = "neelimasg"
     description = "create sg for instance"
-    ingress = {
-        fromport = 80
-        toport = 80
+    ingress  {
+        from_port = 80
+        to_port = 80
         protocol = "tcp"
-        cidr = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
     }
     
-    ingress = {
-        fromport = 22
-        toport = 22
+    ingress  {
+        from_port = 22
+        to_port = 22
         protocol ="tcp"
-        cidr_block = ["0.0.0.0/0"]
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    ingress  {
+        from_port = 80
+        to_port = 80
+        protocol ="tcp"
+        cidr_blocks = ["0.0.0.0/0"]
     }
 
   }
 resource "aws_instance" "neelima" {
   ami           = "ami-0dee22c13ea7a9a67"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   tags = {
   name = "Myinstance" }
-  security_groups = [aws_security_group.neelimasg]
+  security_groups = [aws_security_group.neelimasg.name]
 }
