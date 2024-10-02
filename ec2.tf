@@ -1,4 +1,4 @@
-
+#neelima created a vpc with subnet,ec2with security groups
 terraform {
   required_providers {
     aws = {
