@@ -34,6 +34,13 @@ resource "aws_security_group" "neelimasg" {
     }
 
   }
+resource "aws_vpc" "neelimavpc" {
+    cidr_block = ["10.0.0.0/16"]
+    enable_dns_hostnames = true
+    tags = {
+      Name = "neelima_vpc"
+    }
+}
 resource "aws_instance" "neelima" {
   ami           = "ami-0dee22c13ea7a9a67"
   instance_type = "t2.micro"
